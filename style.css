@@ -11,18 +11,18 @@ body {
 }
 
 .container {
+    --square-dimension: 500px;
+
     display: flex;
     flex-wrap: wrap;
-    width: fit-content;
+    height: var(--square-dimension);
+    width: var(--square-dimension);
+    border: 1px solid black;
+    padding: 1px;
     margin-inline: 1rem;
 }
 
 .cell {
-    --square-dimension: 10px;
-
-    flex: 0 0 auto;
-    height: var(--square-dimension);
-    width: var(--square-dimension);
     outline: 1px solid #ffffff;
     background: hsl(239, 71%, 80%)
 }

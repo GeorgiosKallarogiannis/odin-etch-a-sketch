@@ -5,7 +5,6 @@ container.addEventListener("mouseover", (e) => {
     if (e.target.className === "cell") {
         const hue = Math.floor(Math.random() * 360);
         lightnessCounter -= 10;
-        console.log(lightnessCounter);
         
         e.target.style.backgroundColor = `hsl(${hue} 100% ${lightnessCounter}%)`;
     }
@@ -29,11 +28,11 @@ function createSketchPadField() {
     const childDiv = document.createElement("div");
     childDiv.className = "cell";
 
+    sizePadElements(container, childDiv, userInput);
+
     for (let i = userInput ** 2; i > 0; i--) {
         container.appendChild(childDiv.cloneNode());
     }
-
-    sizePadField(container, userInput);
 }
 
 function removeAllChildren(parent) {
@@ -44,9 +43,11 @@ function removeAllChildren(parent) {
     }
 }
 
-function sizePadField(container, rows) {
-    const childWidth = container.firstChild.offsetWidth;
-    const newContainerWidth = childWidth * rows;
+function sizePadElements(container, element, rows) {
+    const containerWidth = container.offsetWidth;
+    const containerPadding = parseInt(window.getComputedStyle(container).padding, 10) * 4;
+    const elementDimension = ((containerWidth - containerPadding) / rows);
     
-    container.style.width = `${newContainerWidth}px`; 
+    element.style.width = `${elementDimension}px`; 
+    element.style.height = `${elementDimension}px`; 
 }
