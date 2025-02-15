@@ -18,5 +18,5 @@ body {
     height: var(--square-dimension);
     width: var(--square-dimension);
     margin: 1px;
-    background: hsl(239, 58%, 55%)
+    background: hsl(239, 58%, 65%)
 }
