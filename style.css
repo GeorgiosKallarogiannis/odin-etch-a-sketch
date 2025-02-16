@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -24,5 +26,5 @@ body {
 
 .cell {
     outline: 1px solid #ffffff;
-    background: hsl(239, 71%, 80%)
+    background: hsl(239, 71%, 80%);
 }
